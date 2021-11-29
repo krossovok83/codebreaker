@@ -2,5 +2,5 @@
 
 require_relative "config/autoloader"
 new = CodeBreaker.new
-print new.code.class
+print new.code
 # binding.pry

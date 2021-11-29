@@ -12,3 +12,7 @@ gem "rubocop", "~> 1.21"
 gem "pry", "~> 0.14.1"
 
 gem "scanf", "~> 1.0.0"
+
+gem "overcommit", "~> 0.58.0"
+
+gem "fasterer", "~> 0.9.0"

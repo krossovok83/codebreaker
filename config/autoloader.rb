@@ -3,6 +3,5 @@
 parent_dir = File.dirname(File.dirname(__FILE__))
 require_relative "../lib/codebreaker/version"
 require "pry"
-require "scanf"
 
 autoload :CodeBreaker, "#{parent_dir}/lib/codebreaker"

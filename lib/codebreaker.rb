@@ -10,9 +10,18 @@ class CodeBreaker
     @code = generate
   end
 
+  # noinspection RubyResolve
   def compare(attempt)
-    @break = attempt.to_s.scanf("%1d" * attempt.size)
-    "++++" if @code == @break
+    response = []
+    index = 0
+    attempt = attempt.to_s.scanf("%1d" * attempt.size)
+    attempt.each do |i|
+      response << "-" if @code.include?(i)
+      response[index] = "+" if i == @code[index]
+      response << "" unless @code.include?(i)
+      index += 1
+    end
+    response.sort.join
   end
 
   private
