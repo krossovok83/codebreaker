@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "lib/codebreaker/version"
+require_relative "config/autoloader"
 
 Gem::Specification.new do |spec|
   spec.name = "codebreaker"

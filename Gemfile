@@ -16,3 +16,5 @@ gem "scanf", "~> 1.0.0"
 gem "overcommit", "~> 0.58.0"
 
 gem "fasterer", "~> 0.9.0"
+
+gem "simplecov", "~> 0.21.2", require: false, group: :test
