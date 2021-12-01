@@ -29,7 +29,8 @@ Gem::Specification.new do |spec|
   # end
   spec.files = Dir["lib/**/*"] + %w[LICENSE.txt README.md]
   spec.bindir = "exe"
-  spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
+  # spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
+  spec.executable = ["codebreaker"]
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "rspec"
