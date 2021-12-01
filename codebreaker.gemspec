@@ -30,7 +30,7 @@ Gem::Specification.new do |spec|
   spec.files = Dir["lib/**/*"] + %w[LICENSE.txt README.md]
   spec.bindir = "exe"
   # spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
-  spec.executable = ["codebreaker"]
+  spec.executables = ["codebreaker"]
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "rspec"
