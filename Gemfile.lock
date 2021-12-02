@@ -58,7 +58,6 @@ GEM
     ruby-progressbar (1.11.0)
     ruby_parser (3.18.1)
       sexp_processor (~> 4.16)
-    scanf (1.0.0)
     sexp_processor (4.16.0)
     simplecov (0.21.2)
       docile (~> 1.1)
@@ -79,7 +78,6 @@ DEPENDENCIES
   rake (~> 13.0)
   rspec
   rubocop (~> 1.21)
-  scanf (~> 1.0.0)
   simplecov (~> 0.21.2)
 
 BUNDLED WITH

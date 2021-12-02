@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "../config/autoloader"
+require_relative "../lib/code_breaker"
 
 RSpec.describe CodeBreaker do
   let(:obj) { CodeBreaker.new }

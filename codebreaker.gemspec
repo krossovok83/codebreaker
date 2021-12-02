@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require_relative "config/autoloader"
+$LOAD_PATH.push File.expand_path(__dir__)
 
 Gem::Specification.new do |spec|
   spec.name = "codebreaker"
-  spec.version = Codebreaker::VERSION
+  spec.version = "0.1.0"
   spec.authors = ["krossovok83"]
   spec.email = ["81463993+krossovok83@users.noreply.github.com"]
 
