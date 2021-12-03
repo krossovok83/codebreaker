@@ -42,6 +42,17 @@ class CodeBreaker
     "You have used all the hints"
   end
 
+  def self.stats
+    return unless File.exist?(RESULT)
+
+    hash = {}
+    array = %w[hell medium easy]
+    YAML.load_stream(File.open(RESULT)) { |document| hash.merge!(document) }
+    hash.sort_by do |_name, param|
+      [array.find_index(param[:difficulty]), param[:attempt_used], param[:hints_used]]
+    end
+  end
+
   def self.rules
     puts File.readlines(RULES)
   end
