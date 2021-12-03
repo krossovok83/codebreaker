@@ -3,7 +3,7 @@
 require_relative "../lib/code_breaker"
 
 RSpec.describe CodeBreaker do
-  let(:obj) { CodeBreaker.new }
+  let(:obj) { CodeBreaker.new(15, 2) }
   it "create new code" do
     expect(obj.code).to be_a(Array)
   end
@@ -18,7 +18,7 @@ RSpec.describe CodeBreaker do
   end
 end
 RSpec.describe "6543" do
-  obj = CodeBreaker.new
+  obj = CodeBreaker.new(15, 2)
   obj.code = [6, 5, 4, 3]
   it "compare 5643" do
     expect(obj.compare(5643)).to eq("++--")
@@ -43,14 +43,14 @@ RSpec.describe "6543" do
   end
 end
 RSpec.describe "6666" do
-  obj = CodeBreaker.new
+  obj = CodeBreaker.new(15, 2)
   obj.code = [6, 6, 6, 6]
   it "compare 1661" do
     expect(obj.compare(1661)).to eq("++")
   end
 end
 RSpec.describe "1234" do
-  obj = CodeBreaker.new
+  obj = CodeBreaker.new(15, 2)
   obj.code = [1, 2, 3, 4]
   it "compare 3124" do
     expect(obj.compare(3124)).to eq("+---")
