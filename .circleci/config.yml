@@ -18,7 +18,10 @@ jobs:
       - checkout
       - run:
           name: Which bundler?
-          command: bundle -v
+          command: |
+            # sudo gem update --system
+            gem install bundler
+            bundle -v
       - ruby/bundle-install
 
 # Invoke jobs via workflows
