@@ -2,13 +2,31 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
-# Orbs are reusable packages of CircleCI configuration that you may share across projects, enabling you to create encapsulated, parameterized commands, jobs, and executors that can be used across multiple projects.
-# See: https://circleci.com/docs/2.0/orb-intro/
-orbs:
-  ruby: circleci/ruby@0.1.2
+executors:
+  default:
+    working_directory: ~/repo
+    description: The official CircleCI Ruby Docker Image
+    docker:
+      - image: circleci/ruby:3.0.2
 
-# Define a job to be invoked later in a workflow.
-# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
+caches:
+  - &bundle_cache_full v2-repo-{{ checksum "Gemfile.lock" }}
+  - &bundle_cache v2-repo-
+
+commands:
+  defaults:
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - *bundle_cache_full
+            - *bundle_cache
+      - run: bundle install --path vendor/bundle
+      - save_cache:
+          key: *bundle_cache_full
+          paths:
+            - vendor/bundle
+
 jobs:
   build:
     docker:
@@ -18,11 +36,24 @@ jobs:
       - checkout
       - run:
           name: Which bundler?
-          command: |
-            # sudo gem update --system
-            gem install bundler
+          command:
             bundle -v
       - ruby/bundle-install
+  lintering:
+    executor: default
+    steps:
+      - defaults
+
+
+
+
+
+orbs:
+  ruby: circleci/ruby@0.1.2
+
+# Define a job to be invoked later in a workflow.
+# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
+
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
