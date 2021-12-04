@@ -29,8 +29,8 @@ commands:
     description: commands to start linters
     steps:
       - run:
-          name: rubocop
-          command: bundle exec rubocop
+          name: fasterer
+          command: bundle exec fasterer
 
 jobs:
   build:
@@ -54,7 +54,7 @@ jobs:
     executor: default
     steps:
       - defaults
-#      - run_linters
+      - run_linters
 
 orbs:
   ruby: circleci/ruby@0.1.2
