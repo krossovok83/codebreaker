@@ -30,8 +30,7 @@ commands:
     steps:
       - run:
           name: run specs
-          command:
-            bundle exec rspec
+          command: bundle exec rspec
 
 jobs:
   build:
@@ -51,7 +50,7 @@ jobs:
           command:
             bundle -v
       - ruby/bundle-install
-  run_cpec:
+  run_spec:
     executor: default
     steps:
       -defaults
@@ -65,4 +64,4 @@ workflows:
     # Inside the workflow, you define the jobs you want to run.
     jobs:
       - build
-      - lintering
+      - run_spec
