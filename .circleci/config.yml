@@ -25,12 +25,12 @@ commands:
           key: *bundle_cache_full
           paths:
             - vendor/bundle
-      run_linters:
-        description: commands to start linters
-        steps:
-          - run:
-              name: rubocop
-              command: bundle exec rubocop
+  run_linters:
+    description: commands to start linters
+    steps:
+      - run:
+          name: rubocop
+          command: bundle exec rubocop
 
 jobs:
   build:
