@@ -21,6 +21,7 @@ commands:
             - *bundle_cache
       - run: gem install bundler:2.2.32
       - run: bundle install --path vendor/bundle
+      - run: gem install rubocop
       - save_cache:
           key: *bundle_cache_full
           paths:
@@ -45,7 +46,6 @@ jobs:
             echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
             source $BASH_ENV
             gem install bundler
-            gem install rubocop
       - run:
           name: Which bundler?
           command:
