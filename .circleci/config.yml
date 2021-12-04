@@ -20,7 +20,7 @@ commands:
             - *bundle_cache_full
             - *bundle_cache
       - run: gem install bundler:2.2.32
-      - run: gem install rubocop
+      - run: gem install panolint
       - run: bundle install --path vendor/bundle
       - save_cache:
           key: *bundle_cache_full
