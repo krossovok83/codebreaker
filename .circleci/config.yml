@@ -19,8 +19,8 @@ commands:
           keys:
             - *bundle_cache_full
             - *bundle_cache
-      - bundle config set --local path 'vendor/bundle'
-      - run: bundle install
+      #      - run: gem install bundler:2.2.32
+      - run: bundle install --path vendor/bundle
       - save_cache:
           key: *bundle_cache_full
           paths:
@@ -49,7 +49,6 @@ jobs:
           name: Which bundler?
           command:
             bundle -v
-      - bundle config set --local path 'vendor/bundle'
       - ruby/bundle-install
   run_spec:
     executor: default
