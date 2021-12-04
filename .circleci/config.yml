@@ -25,12 +25,13 @@ commands:
           key: *bundle_cache_full
           paths:
             - vendor/bundle
-  run_linters:
-    description: commands to start linters
+  run_specs:
+    description: commands to start tests
     steps:
       - run:
-          name: fasterer
-          command: bundle exec fasterer
+          name: run specs
+          command:
+            bundle exec rspec
 
 jobs:
   build:
@@ -50,11 +51,11 @@ jobs:
           command:
             bundle -v
       - ruby/bundle-install
-  lintering:
+  run_cpec:
     executor: default
     steps:
-      - defaults
-      - run_linters
+      -defaults
+      - run_specs
 
 orbs:
   ruby: circleci/ruby@0.1.2
