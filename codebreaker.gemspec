@@ -43,4 +43,9 @@ Gem::Specification.new do |spec|
   spec.metadata = {
     "rubygems_mfa_required" => "true"
   }
+
+  spec.add_dependency("fasterer", "~> 0.9.0")
+  spec.add_dependency("overcommit", "~> 0.58.0")
+  spec.add_dependency("rake", "~> 13.0")
+  spec.add_dependency("rubocop", "~> 1.21")
 end

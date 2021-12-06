@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require_relative "../lib/code_breaker"
-
 RSpec.describe CodeBreaker do
   let(:obj) { CodeBreaker.new(15, 2) }
   it "create new code" do

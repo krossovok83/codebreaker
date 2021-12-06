@@ -2,6 +2,10 @@ PATH
   remote: .
   specs:
     codebreaker (0.1.0)
+      fasterer (~> 0.9.0)
+      overcommit (~> 0.58.0)
+      rake (~> 13.0)
+      rubocop (~> 1.21)
 
 GEM
   remote: https://rubygems.org/
@@ -72,12 +76,8 @@ PLATFORMS
 
 DEPENDENCIES
   codebreaker!
-  fasterer (~> 0.9.0)
-  overcommit (~> 0.58.0)
   pry (~> 0.14.1)
-  rake (~> 13.0)
   rspec
-  rubocop (~> 1.21)
   simplecov (~> 0.21.2)
 
 BUNDLED WITH
