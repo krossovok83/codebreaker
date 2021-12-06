@@ -5,8 +5,6 @@ require_relative "../autoload"
 class CodeBreaker
   attr_accessor :code, :attempts_left, :hints
 
-  WIN = "+++"
-
   def initialize(attempts, hints)
     @attempts = attempts
     @attempts_left = attempts
