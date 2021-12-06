@@ -8,7 +8,7 @@ Style/StringLiterals:
   Enabled: true
   EnforcedStyle: double_quotes
 
-Documentation:
+Style/Documentation:
   Enabled: false
 
 Style/StringLiteralsInInterpolation:

@@ -11,8 +11,38 @@ RSpec.describe CodeBreaker do
   end
 
   it "min max" do
-    expect(obj.code.min).to be >= 1
-    expect(obj.code.max).to be <= 6
+    expect(obj.code.min).to be_between(1, 6)
+  end
+
+  it "hint" do
+    expect(obj.hint).to be_a(Integer)
+    expect(obj.hint).to be_between(1, 6)
+    expect(obj.hint).to be_nil
+  end
+
+  it "rules" do
+    stub_const("RULES", "LICENSE.txt")
+    expect(described_class.rules).to be_a(Array)
+  end
+end
+RSpec.describe CodeBreaker do
+  let(:obj) { CodeBreaker.new(15, 2) }
+  before do
+    stub_const("RESULT_DIR", "test")
+    stub_const("RESULT", "test/test.yml")
+  end
+
+  after(:all) do
+    FileUtils.rm_rf(Dir["test"])
+  end
+
+  it "save" do
+    obj.save("Some_name", "easy")
+    expect(File.exist?("test/test.yml")).to be true
+  end
+
+  it "stats" do
+    expect(described_class.stats).to be_a(Array)
   end
 end
 RSpec.describe "6543" do
