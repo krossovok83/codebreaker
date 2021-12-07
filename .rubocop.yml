@@ -8,6 +8,13 @@ Style/StringLiterals:
   Enabled: true
   EnforcedStyle: double_quotes
 
+Metrics/BlockLength:
+  Exclude:
+    - 'Rakefile'
+    - '/*.rake'
+    - 'test//*.rb'
+    - 'spec/**/*.rb'
+
 Style/Documentation:
   Enabled: false
 
