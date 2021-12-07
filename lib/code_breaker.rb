@@ -18,7 +18,7 @@ class CodeBreaker
     @code_attempt = @code.dup
     @response = []
     @index = 0
-    attempt.each(&method(:calculate))
+    attempt.to_s.each_char.map(&:to_i).each(&method(:calculate))
     @attempts_left -= 1
     return @response.join if @response.join == WIN
 
