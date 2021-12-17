@@ -5,7 +5,7 @@ require_relative "../autoload"
 class CodeBreaker
   NUMBER_OF_SIGNS = 4
   RANGE_CODE = (1..6).freeze
-  WIN = "+++"
+  WIN = "++++"
 
   attr_accessor :code, :attempts_left, :hints
 
