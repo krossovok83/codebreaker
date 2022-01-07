@@ -59,7 +59,8 @@ class CodeBreaker
                           attempts: @attempts,
                           attempt_used: @attempts - @attempts_left,
                           hints: @hints_for_stat,
-                          hints_used: @hints_for_stat - self.hints } }
+                          hints_used: @hints_for_stat - self.hints
+                          date: Time.now.strftime("%Y-%m-%d %H:%M:%S") } }
     FileUtils.mkdir_p RESULT_DIR
     File.open(RESULT, "a") { |file| file.write(hash.to_yaml) }
   end
